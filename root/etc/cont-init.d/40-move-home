@@ -5,26 +5,26 @@ then
     export USERNAME=abc
 fi
 
-if [ ${USER_HOME} ] && [ ${USER_HOME} != "/config" ]
+if [ ${HOME} ] && [ ${HOME} != "/config" ]
 then
     echo "Changing user home"
-    usermod -d ${USER_HOME} ${USERNAME}
+    usermod -d ${HOME} ${USERNAME}
     if [ -d /config/.config/code-server ]
     then
-        if [ ! -d ${USER_HOME}/.config/code-server ]
+        if [ ! -d ${HOME}/.config/code-server ]
         then
             echo "Moving code-server config"
-            mkdir -p ${USER_HOME}/.config/code-server
-            mv /config/.config/code-server ${USER_HOME}/.config
+            mkdir -p ${HOME}/.config/code-server
+            mv /config/.config/code-server ${HOME}/.config
         fi
     fi
     if [ -d /config/.local/share/code-server ]
     then
-        if [ ! -d ${USER_HOME}/.local/share/code-server ]
+        if [ ! -d ${HOME}/.local/share/code-server ]
         then
             echo "Moving code-server shared files"
-            mkdir -p ${USER_HOME}/.local/share/code-server
-            mv /config/.local/share/code-server ${USER_HOME}/.local/share
+            mkdir -p ${HOME}/.local/share/code-server
+            mv /config/.local/share/code-server ${HOME}/.local/share
         fi
     fi
 fi
