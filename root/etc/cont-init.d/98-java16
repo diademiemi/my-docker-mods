@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+echo "**** Installing java 16 ****"
+apt-get install -y \
+    adoptopenjdk-16-hotspot
