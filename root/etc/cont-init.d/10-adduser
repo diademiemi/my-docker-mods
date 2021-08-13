@@ -10,6 +10,9 @@ then
     export USERNAME=abc
 fi
 
+usermod -l ${USERNAME} abc
+groupmod -g ${USERNAME} abc
+
 groupmod -o -g "$PGID" "$USERNAME"
 usermod -o -u "$PUID" "$USERNAME"
 
