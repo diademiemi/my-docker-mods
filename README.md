@@ -9,5 +9,5 @@ If adding multiple mods, enter them in an array separated by `|`, such as `DOCKE
 Define the following environment variables in the container startup.
 
 `USERNAME`: The username to use in the container. Must be lower case and otherwise valid Linux login name. Defaults to `abc`  
-`HOME_DIR`: The home directory to use in the container. Must be a valid directory in the container. Defaults to `/config`  
+`HOME`: The home directory to use in the container. Must be a valid directory in the container. Defaults to `/config`  
 `SHELL`: Path to the default shell of this user. Must be a valid shell executable in the cointainer. Defaults to `/bin/bash`  
