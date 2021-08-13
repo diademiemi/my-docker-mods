@@ -1,0 +1,30 @@
+#!/usr/bin/with-contenv bash
+
+# Overwrites default 30-config provided by linuxserver/docker-code-server
+
+if [ -z ${USERNAME} ]
+then
+    export USERNAME=abc
+fi
+
+mkdir -p /config/{extensions,data,workspace,.ssh}
+
+if [ -n "${SUDO_PASSWORD}" ] || [ -n "${SUDO_PASSWORD_HASH}" ]; then
+    echo "setting up sudo access"
+    if ! grep -q ${USERNAME} /etc/sudoers; then
+        echo "adding ${USERNAME} to sudoers"
+        echo "${USERNAME} ALL=(ALL:ALL) ALL" >> /etc/sudoers
+    fi
+    if [ -n "${SUDO_PASSWORD_HASH}" ]; then
+        echo "setting sudo password using sudo password hash"
+        sed -i "s|^${USERNAME}:\!:|abc:${SUDO_PASSWORD_HASH}:|" /etc/shadow
+    else
+        echo "setting sudo password using SUDO_PASSWORD env var"
+        echo -e "${SUDO_PASSWORD}\n${SUDO_PASSWORD}" | passwd ${USERNAME}
+    fi
+fi
+
+# permissions
+chown -R ${USERNAME}"${USERNAME} \
+    /config
+
