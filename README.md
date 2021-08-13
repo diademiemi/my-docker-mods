@@ -1,4 +1,4 @@
-# Java 16 - Custom user mod for code-server
+# Custom user mod for code-server
 
 This mod adds a way to set a custom username and home directory to code-server, to be installed/updated during container start.
 
