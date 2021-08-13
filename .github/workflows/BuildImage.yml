@@ -4,8 +4,8 @@ on: [push, pull_request, workflow_dispatch]
 
 env:
   ENDPOINT: "diademiemi/docker-mods" #don't modify
-  BASEIMAGE: "code-server" #replace
-  MODNAME: "custom-user" #replace
+  BASEIMAGE: "CHANGEME" #replace
+  MODNAME: "CHANGEME" #replace
 
 jobs:
   build:
