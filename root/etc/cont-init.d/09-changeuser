@@ -4,7 +4,7 @@ if [ ${USERNAME} ] && [ ${USERNAME} != "abc" ]
 then
     echo "Change login name"
     usermod -l ${USERNAME} abc
-    groupmod -g ${USERNAME} abc
+    groupmod -n ${USERNAME} abc
     echo "Change init scripts which use hardcoded username"
     find /etc/cont-init.d -type f ! -name 09-changeuser ! -name 40-move-home -exec sed -i "s/abc/${USERNAME}/g" {} \;
     echo "Change code-server startup script"
