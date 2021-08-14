@@ -2,9 +2,9 @@
 
 This mod adds a way to set a custom username and home directory to code-server, to be installed/updated during container start.
 
-In code-server docker arguments, set an environment variable `DOCKER_MODS=linuxserver/mods:code-server-custom-user`
+In code-server docker arguments, set an environment variable `DOCKER_MODS=ghcr.io/diademiemi/docker-mods:code-server-custom-user`
 
-If adding multiple mods, enter them in an array separated by `|`, such as `DOCKER_MODS=linuxserver/mods:code-server-custom-user|linuxserver/mods:openssh-server-mod2`
+If adding multiple mods, enter them in an array separated by `|`, such as `DOCKER_MODS=ghcr.io/diademiemi/docker-mods:code-server-custom-user|linuxserver/mods:openssh-server-mod2`
 
 Define the following environment variables in the container startup.
 
