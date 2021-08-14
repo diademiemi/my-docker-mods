@@ -1,7 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-if [ ${SHELL} ]
-then
-    echo "Changing user shell"
-    usermod -s ${SHELL} ${USERNAME}
-fi
